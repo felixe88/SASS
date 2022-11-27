@@ -1,0 +1,42 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  flex-direction: column;
+}
+div h1 {
+  color: green;
+  text-decoration: underline blue;
+}
+div .section_1 {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+div .section_1 article:nth-child(odd) {
+  border: 2px solid green;
+  padding: 15px;
+  text-align: center;
+  color: blue;
+}
+div .section_1 article:nth-child(even) {
+  border: 2px solid green;
+  padding: 15px;
+  text-align: center;
+  color: red;
+}
+div .section_2 {
+  display: flex;
+  align-items: center;
+  color: green;
+  border: 3px solid blue;
+  font-size: x-large;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
