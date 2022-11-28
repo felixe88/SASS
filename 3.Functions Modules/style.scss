@@ -1,0 +1,51 @@
+@use "module.scss" as *;
+
+@mixin article($border-color, $color) {
+  border: 1px solid $border-color;
+  color: $color;
+  margin: rem-cal(15);
+  padding: rem-cal(5);
+  text-align: center;
+  height: 90px;
+}
+
+div {
+  border: 1px solid $red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    color: $green;
+    text-decoration: $blue underline;
+  }
+  .section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    article:nth-of-type(odd) {
+      @include article($green, $blue);
+      p {
+        align-items: center;
+      }
+    }
+    article:nth-of-type(even) {
+      @include article($green, $red);
+      p {
+        align-items: center;
+      }
+    }
+  }
+  .section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    .article {
+        @include article($blue,$green );
+        p {
+        align-items: center;
+      }
+    }
+  }
+}

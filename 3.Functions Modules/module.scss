@@ -1,0 +1,8 @@
+$red:red;
+$blue:blue;
+$green:green;
+
+@function rem-cal($value){
+    $rem : ($value / 16)+rem;
+    @return $rem;
+}

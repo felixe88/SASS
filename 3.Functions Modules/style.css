@@ -1,0 +1,56 @@
+div {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div h1 {
+  color: green;
+  text-decoration: blue underline;
+}
+div .section1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div .section1 article:nth-of-type(odd) {
+  border: 1px solid green;
+  color: blue;
+  margin: 0.9375rem;
+  padding: 0.3125rem;
+  text-align: center;
+  height: 90px;
+}
+div .section1 article:nth-of-type(odd) p {
+  align-items: center;
+}
+div .section1 article:nth-of-type(even) {
+  border: 1px solid green;
+  color: red;
+  margin: 0.9375rem;
+  padding: 0.3125rem;
+  text-align: center;
+  height: 90px;
+}
+div .section1 article:nth-of-type(even) p {
+  align-items: center;
+}
+div .section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+div .section2 .article {
+  border: 1px solid blue;
+  color: green;
+  margin: 0.9375rem;
+  padding: 0.3125rem;
+  text-align: center;
+  height: 90px;
+}
+div .section2 .article p {
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
