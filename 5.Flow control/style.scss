@@ -1,0 +1,112 @@
+@use "sass:color";
+$color-primary: red;
+$color-secondary: blue;
+$color-tertiary: green;
+
+@function rem($number) {
+    @return calc($number * 1rem);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $color-primary;
+    margin: rem(0.5) rem(1);
+}
+
+h1 {
+    color: $color-tertiary;
+    border-bottom: 1px solid $color-secondary;
+}
+section.section-card,
+section.section-footer {
+    display: flex;
+    padding: 0 rem(1);
+    padding-bottom: rem(1);
+}
+
+@mixin article($color, $border-color, $font-size: rem(1)) {
+    border: 1px solid $border-color;
+    font-size: $font-size;
+    text-align: center;
+    p {
+        padding: rem(0.5) rem(1);
+        @content;
+    }
+}
+
+.article-card {
+    @include article($color: $color-primary, $border-color:  $color-tertiary) {
+        &.odd {
+            color:  $color-secondary;
+        }
+        &.even {
+            color:  $color-primary;
+        }
+    }
+}
+
+.article-footer {
+    @include article($color:  $color-tertiary, $border-color: $color-secondary, $font-size:  rem(1.5)) {
+        color:  $color-tertiary;
+    }
+}
+
+section.section-number {
+    display: flex;
+    flex-direction: row;
+    padding: 0 rem(1);
+}
+
+$sizes: 1, 2, 3;
+
+@each $size in $sizes {
+    .fs-#{$size}rem {
+        display: flex;
+        width: 3.1rem;
+        height: 3.1rem;
+        color: black;
+        background-color: white;
+        border: 1px solid red;
+        margin: 0.85rem;
+        font-size: rem($size);
+    }
+}
+
+@for $index from 1 to 20 {
+    @if $index == 1 or $index == 4 or $index == 8 or $index == 11 or $index == 14 or $index == 17 {
+        .fs-1rem:nth-child(#{$index}) {
+            color: hsl(0, 0%, calc(0% + #{$index}*5%));
+            background-color: hsl(0, 0%, calc(100% - #{$index}*5%));
+        }
+    }
+
+    @if $index == 2 or $index == 5 or $index == 7 or $index == 13 or $index == 16 or $index == 19 {
+        .fs-2rem:nth-child(#{$index}) {
+            color: hsl(0, 0%, calc(0% + #{$index}*5%));
+            background-color: hsl(0, 0%, calc(100% - #{$index}*5%));
+        }
+    }
+
+    @if $index == 3 or $index == 6 or $index == 9 or $index == 12 or $index == 15 or $index == 18 {
+        .fs-3rem:nth-child(#{$index}) {
+            color: hsl(0, 0%, calc(0% + #{$index}*5%));
+            background-color: hsl(0, 0%, calc(100% - #{$index}*5%));
+        }
+    }
+
+    @if $index == 10 {
+        .fs-2rem:nth-child(#{$index}) {
+            color: red;
+            background-color: blue;
+        }
+    }
+}
